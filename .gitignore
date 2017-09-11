@@ -1,0 +1,7 @@
+/.gradle
+/.idea
+/*.iml
+/target
+/out
+/log
+/etc/prop.properties
