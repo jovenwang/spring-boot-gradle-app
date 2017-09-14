@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
-class ApplicationTest {
+class ApplicationJunitTest {
 
     @Autowired
     private CarRepository repository;
