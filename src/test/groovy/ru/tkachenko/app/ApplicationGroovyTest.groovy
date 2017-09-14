@@ -10,14 +10,22 @@ import spock.lang.Specification
  * @author Dmitry Tkachenko
  * 14.09.17
  */
-@SpringBootTest(classes = Application.class)
-// works without "(classes = Application.class)"
+@SpringBootTest
 class ApplicationGroovyTest extends Specification {
 
     @Autowired
     private CarRepository repository;
 
-    def "spring context loads for data jpa slice"() {
+    def "remove all Mcc from database"() {
+        given:
+        repository.deleteAll()
+        when:
+        List<Car> allCars = repository.findAll()
+        then:
+        allCars.isEmpty()
+    }
+
+    def "insert and find Car to/in database"() {
         given: "some existing car"
         def mcc = new Car(id: null, description: "desc")
 
