@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "BEST_CAR_TAB")
-@SequenceGenerator(name = "bestCarGen", sequenceName = "BEST_CAR_SEQ")
+@SequenceGenerator(name = "bestCarGen", sequenceName = "BEST_CAR_SEQ", allocationSize = 1)
 @Data
 public class Car {
 
